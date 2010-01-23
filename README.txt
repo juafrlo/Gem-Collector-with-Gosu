@@ -8,7 +8,7 @@
 		" = Grass
 		e = Enemy
 		x = Gem
-	The keys are the cursors to move left, right and jump. Have fun!
+	The keys are the cursors to move left, right and jump. To play, just type "ruby main.rb" on your console. Have fun!
 	
 
 == ABOUT THE CREATOR
