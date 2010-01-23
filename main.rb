@@ -30,7 +30,10 @@ class Game < Window
     @screen_x = @screen_y = 0
     # Font for the score
     @font = Gosu::Font.new(self, Gosu::default_font_name, 20) 
+    @jump = Gosu::Sample.new(self, "media/jump.wav")
     @player.status = "starting"
+    @background = Gosu::Song.new(self, "media/background.wav")
+    @background.play(true)
   end
   
   def update
@@ -63,7 +66,7 @@ class Game < Window
         if e.status == "alive"
           e.update(2)      
           e.draw(@screen_x, @screen_y) 
-          e.kills_player?(@player)
+          e.kills_player?(@player) if @player.status == "alive"
         else
           @map.enemies.delete(e) 
         end
@@ -101,6 +104,9 @@ class Game < Window
           if button_down? KbReturn 
             @player.status = "alive"        
           end
+        else
+          @font.draw("For more info visit http://www.juandefrias.com", 134, 280, ZOrder::Score, 1.0, 1.0, 0xffffff00)     
+          @font.draw("Press ESC to exit", 260, 310, ZOrder::Score, 1.0, 1.0, 0xffffff00)
         end
       end
       @font.draw("Points: #{@player.score}", 10, 10, ZOrder::Score, 1.0, 1.0, 0xffffff00) 
@@ -109,7 +115,7 @@ class Game < Window
   end
 
   def button_down(id)
-    if id == KbUp then @player.try_to_jump end
+    if id == KbUp then @player.try_to_jump and @jump.play end
     if id == KbEscape then close end
   end
 end

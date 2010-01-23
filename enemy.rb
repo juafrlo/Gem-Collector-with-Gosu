@@ -79,7 +79,7 @@ class Enemy
     elsif (player.y - @y == 40 || player.y - @y == 44) && 
       ( ((x - player.x) > -25 && (x - player.x  ) < 0) || ((x-player.x) > -45 && (x-player.x)<0))
       player.lives -= 1 if player.status != "dead"
-      @dead.play
+      @dead.play if player.status == "alive"
       player.status = "dead"
     end
   end
