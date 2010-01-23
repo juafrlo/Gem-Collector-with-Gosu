@@ -22,7 +22,7 @@ class Game < Window
 
   def initialize
     super(640, 480, false)
-    self.caption = "Jumper man"
+    self.caption = "Gem collector"
     @map = Map.new(self, "media/map.txt")
     @title = Title.new(self)
     @player = Player.new(self, 600, 495)
