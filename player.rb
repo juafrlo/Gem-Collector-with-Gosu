@@ -1,6 +1,6 @@
 class Player
-  attr_reader :x, :y, :score
-  attr_accessor :status, :vy, :lives
+  attr_reader :x, :y
+  attr_accessor :status, :vy, :lives, :score
 
   def initialize(window, x, y)
     @x, @y = x, y

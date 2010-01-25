@@ -66,7 +66,7 @@ class Game < Window
         if e.status == "alive"
           e.update(2)      
           e.draw(@screen_x, @screen_y) 
-          e.kills_player?(@player) if @player.status == "alive"
+          e.someone_is_killed?(@player) if @player.status == "alive"
         else
           @map.enemies.delete(e) 
         end

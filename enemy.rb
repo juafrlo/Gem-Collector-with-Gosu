@@ -70,10 +70,12 @@ class Enemy
     end
   end
   
-  def kills_player?(player)
+  def someone_is_killed?(player)
     if @y > player.y - 40 && (@y - player.y - 40) < 5 &&
      player.vy > 1 &&
       ( ((x - player.x) > -25 && (x - player.x  ) < 0) || ((x-player.x) > -45 && (x-player.x)<0))
+      player.vy = -10
+      player.score += 100
       @status = "dead"
       @dead.play
     elsif (player.y - @y == 40 || player.y - @y == 44) && 
