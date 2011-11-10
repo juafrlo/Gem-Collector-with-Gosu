@@ -8,7 +8,7 @@
 		" = Grass
 		e = Enemy
 		x = Gem
-	The keys are the cursors to move left, right and jump. To play, just type "ruby main.rb" on your console. Have fun!
+	The keys are the cursors to move left, right and jump. You have to install the gosu gem, version 0.7.17, with the command "gem install gosu -v=0.7.17". To play, just type "ruby main.rb" on your console. Have fun!
 	
 
 == ABOUT THE CREATOR

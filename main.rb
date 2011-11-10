@@ -9,6 +9,8 @@ module ZOrder
   Background, Player, Map, Gem, Score = *0..5
 end
 
+require 'rubygems'
+gem 'gosu', '=0.7.17'
 require 'gosu'
 include Gosu
 require 'map'
